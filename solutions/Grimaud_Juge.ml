@@ -1,0 +1,12 @@
+let p1 l1 l2 = l1 && not l2;;
+let p2 l1 l2 = (l1 && not l2) || (not l1 && l2);;
+let p3 l1 l2 = (p1 l1 l2) && not (p2 l1 l2);;
+let p4 l1 l2 = not (p1 l1 l2) && (p2 l1 l2);;
+p3 false false;;
+p3 false true;;
+p3 true false;;
+p3 true true;;
+p4 false false;;
+p4 false true;;
+p4 true false;;
+p4 true true;;
